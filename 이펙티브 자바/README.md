@@ -16,4 +16,12 @@
 
   
 
-원문 출처 : https://javabom.tistory.com/70
+원문 출처 : https://javabom.tistory.com/70
+
+
+
+### 패치노트
+
+21.01.06 
+
+- 아이템[1\] 초안 작성 완료
