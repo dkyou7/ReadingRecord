@@ -2,7 +2,7 @@
 
 
 
-**TODO** (20.01.05 ~ 19.01.19)
+**TODO** (20.01.05 ~ )
 
 - JVM의 메모리 구조 조사해서 정리해오기 
 
@@ -15,4 +15,5 @@
 ![image](https://user-images.githubusercontent.com/26649731/103642160-1b801680-4f96-11eb-8739-cd070514493c.png)
 
   
-  
+
+원문 출처 : https://javabom.tistory.com/70
