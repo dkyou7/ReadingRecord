@@ -12,6 +12,7 @@
 
   **이슈 올리는 방법**
 
-  ![image](README/img/103642160-1b801680-4f96-11eb-8739-cd070514493c.png)
+![image](https://user-images.githubusercontent.com/26649731/103642160-1b801680-4f96-11eb-8739-cd070514493c.png)
+
   
   
