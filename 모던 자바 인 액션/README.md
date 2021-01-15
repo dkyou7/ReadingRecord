@@ -1,4 +1,4 @@
-# 모던 자바 인 액션
+# 모던 자바 인 액션
 
 
 
@@ -10,7 +10,8 @@
 
 - 아이템10 까지 읽고 질문 이슈에 올리기
 
-  **이슈 올리는 방법**
+**이슈 올리는 방법**
+
 
 ![image](https://user-images.githubusercontent.com/26649731/103642160-1b801680-4f96-11eb-8739-cd070514493c.png)
 
@@ -19,13 +20,6 @@
 원문 출처 : https://javabom.tistory.com/70
 
 
-
 ### 패치노트
 
-21.01.06 : [아이템[1]](https://dkyou.tistory.com/138)
-
-21.01.07 : [아이템[2]](https://dkyou.tistory.com/139)
-
-21.01.08 : [아이템[3]](https://dkyou.tistory.com/140)
-
-21.01.09 : [아이템[4]](https://dkyou.tistory.com/141)
+21.01.14 - 1장 정리
