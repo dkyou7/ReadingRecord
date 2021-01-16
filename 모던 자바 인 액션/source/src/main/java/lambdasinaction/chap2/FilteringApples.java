@@ -36,6 +36,11 @@ public class FilteringApples{
 		});
 		System.out.println(redApples2);
 
+		List<Apple> greenAndBad = filter(inventory, new AppleGreenAndBad());
+		System.out.println(greenAndBad);
+
+		List<Apple> result = filter(inventory, (Apple apple) -> apple.getColor().equals("green"));
+		System.out.println(result);
 	}
 
 	public static List<Apple> filterGreenApples(List<Apple> inventory){
@@ -114,6 +119,12 @@ public class FilteringApples{
 
 	interface ApplePredicate{
 		public boolean test(Apple a);
+	}
+
+	static class AppleGreenAndBad implements ApplePredicate{
+		public boolean test(Apple apple) {
+			return "green".equals(apple.getColor()) && apple.getWeight()<90;
+		}
 	}
 
 	static class AppleWeightPredicate implements ApplePredicate{
