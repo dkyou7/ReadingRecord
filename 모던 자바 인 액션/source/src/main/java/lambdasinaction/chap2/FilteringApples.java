@@ -1,6 +1,10 @@
 package lambdasinaction.chap2;
 
+import jdk.internal.org.jline.terminal.MouseEvent;
+
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 
 public class FilteringApples{
 
@@ -41,6 +45,21 @@ public class FilteringApples{
 
 		List<Apple> result = filter(inventory, (Apple apple) -> apple.getColor().equals("green"));
 		System.out.println(result);
+
+		List<Apple> pandan = pandan(inventory, new AppleGreen());
+		List<Apple> pandan_lamda = pandan(inventory, (Apple apple) -> "green".equals(apple.getColor()));
+
+
+		List<Apple> inventory2 = Arrays.asList(new Apple(80,"green"), new Apple(155, "green"), new Apple(120, "red"));
+		List<Apple> filter = filterT(inventory2, (Apple apple) -> "green".equals(apple.getColor()));
+		List<Integer> numers = Arrays.asList(1,2,3,4,5,6,7,8,9); // 배열 생성
+		List<Integer> evenNumbers = filterT(numers, (Integer i) -> i % 2 == 0);
+
+		System.out.println(inventory);
+		inventory.sort((Apple a1, Apple a2) -> a1.getWeight().compareTo(a2.getWeight()));
+		System.out.println(inventory);
+		MouseEvent.Button button = new MouseEvent.Button("send");
+		button.se
 	}
 
 	public static List<Apple> filterGreenApples(List<Apple> inventory){
@@ -82,7 +101,17 @@ public class FilteringApples{
 			}
 		}
 		return result;
-	}       
+	}
+
+	public static List<Apple> pandan(List<Apple> appleList, ApplePandan p){
+		List<Apple> result = new ArrayList<>();
+		for(Apple apple : appleList){
+			if(p.test(apple)){
+				result.add(apple);
+			}
+		}
+		return result;
+	}
 
 	public static class Apple {
 		private int weight = 0;
@@ -119,6 +148,35 @@ public class FilteringApples{
 
 	interface ApplePredicate{
 		public boolean test(Apple a);
+	}
+
+	interface ApplePandan{
+		public boolean test(Apple apple);
+	}
+
+	public interface Predicate<T>{
+		public boolean test(T t);
+	}
+
+	public static <T> List<T> filterT(List<T> list, Predicate<T> p){
+		List<T> res = new ArrayList<>();
+		for(T t : list){
+			if(p.test(t)){
+				res.add(t);
+			}
+		}
+		return res;
+	}
+
+	static class AppleGreen implements ApplePandan{
+		public boolean test(Apple apple){
+			return "green".equals(apple.getColor());
+		}
+	}
+	static class AppleHeavy implements ApplePandan{
+		public boolean test(Apple apple) {
+			return apple.getWeight() > 150;
+		}
 	}
 
 	static class AppleGreenAndBad implements ApplePredicate{
