@@ -13,6 +13,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class PersonTest {
 
     @Test
+    @DisplayName("두 객체가 같은 인스턴스를 참조함")
     public void PersonTest1(){
 //        Person item1 = new Person();
         Person item2 = Person.INSTANCE;
@@ -21,6 +22,7 @@ public class PersonTest {
     }
 
     @Test(expected = InvocationTargetException.class)   // 리팩토링
+    @DisplayName("예외가 발생함")
     public void PersonTest2() throws Exception {
         Person item = Person.INSTANCE;
         Constructor<Person> constructor = (Constructor<Person>) item.getClass().getDeclaredConstructor();
